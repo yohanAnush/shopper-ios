@@ -14,6 +14,7 @@
 		9C586FED232CAF5900B8D4EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C586FEB232CAF5900B8D4EC /* LaunchScreen.storyboard */; };
 		9C586FF8232CAF5900B8D4EC /* assignment_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C586FF7232CAF5900B8D4EC /* assignment_2Tests.swift */; };
 		9C587003232CAF5900B8D4EC /* assignment_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C587002232CAF5900B8D4EC /* assignment_2UITests.swift */; };
+		9CD5B8F62330972D004BB1E3 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD5B8F52330972D004BB1E3 /* ItemListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9C586FFE232CAF5900B8D4EC /* assignment-2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "assignment-2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C587002232CAF5900B8D4EC /* assignment_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignment_2UITests.swift; sourceTree = "<group>"; };
 		9C587004232CAF5900B8D4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CD5B8F52330972D004BB1E3 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				9C586FE4232CAF5800B8D4EC /* ViewController.swift */,
+				9CD5B8F52330972D004BB1E3 /* ItemListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				9C586FE5232CAF5800B8D4EC /* ViewController.swift in Sources */,
 				9C586FE3232CAF5800B8D4EC /* AppDelegate.swift in Sources */,
+				9CD5B8F62330972D004BB1E3 /* ItemListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
