@@ -14,4 +14,5 @@ struct Item {
     var name: String
     var price: String
     var thumbnailUrl: String
+    var description: String
 }
