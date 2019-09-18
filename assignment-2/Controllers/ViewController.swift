@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func doLogin(_ sender: Any) {
-        let itemsViewController = self.storyboard?.instantiateViewController(withIdentifier: "Items") as! ViewController
+        let itemsViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserMainScreen") as! UITabBarController
         self.present(itemsViewController, animated: true, completion: nil)
     }
     
