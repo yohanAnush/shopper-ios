@@ -20,6 +20,11 @@ class IndividualItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set up navbar and back button.
+        navbar.backgroundColor = UIColor.white
+        navbar.tintColor = UIColor.blue
+        navbar.backItem?.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
+        
         // Update the page with item details.
         if let item = item {
             navbar.topItem?.title = item.name

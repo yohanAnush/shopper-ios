@@ -15,6 +15,7 @@ import UIKit
 class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var selectedItem: Item?
     
     let items = [
         Item(id: 0, name: "Apple iPhone 6s", price: "300", thumbnailUrl: "", description: ""),
@@ -42,12 +43,17 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     // Handle row selection.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let itemSelected = items[indexPath.row]
+        self.selectedItem = items[indexPath.row]
         
         // Move to individual item screen.
-        let individualItemScreen = self.storyboard?.instantiateViewController(withIdentifier: "IndividualItem") as! IndividualItemViewController
-        individualItemScreen.item = itemSelected
-        self.present(individualItemScreen, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "listToIndividualSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "listToIndividualSegue") {
+            let svc = segue.destination as! IndividualItemViewController
+            svc.item = self.selectedItem
+        }
     }
     
     override func viewDidLoad() {

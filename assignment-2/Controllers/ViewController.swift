@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func doLogin(_ sender: Any) {
-        let itemListViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserMainScreen") as! UITabBarController
-        self.present(itemListViewController, animated: true, completion: nil)
+        performSegue(withIdentifier: "userLoginSuccessSegue", sender: self)
     }
     
     override func viewDidLoad() {
