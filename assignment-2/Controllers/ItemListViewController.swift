@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+ * Responsible for populating shopping items table with data.
+ * A custom NIB is used to represent a table cell.
+ */
 class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,19 +27,21 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemView", for: indexPath) as! ItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingItemView", for: indexPath) as! ShoppingItemView
         let item = items[indexPath.row]
+        
         cell.itemName?.text = item.name
         cell.itemPrice?.text = item.price
-        
-        print("Cell fired")
-        
+
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "ItemView", bundle: nil), forCellReuseIdentifier: "ItemView")
+        
+        // Load the NIB.
+        // Since the table is within another view, datasource and delegate must be handled from here.
+        tableView.register(UINib(nibName: "ShoppingItemView", bundle: nil), forCellReuseIdentifier: "ShoppingItemView")
         tableView.dataSource = self
         tableView.delegate = self
     }

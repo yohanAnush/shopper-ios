@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ItemCell: UITableViewCell {
+/**
+ * Represent a table view cell that can be used in a UITableView.
+ * UI elements are referenced from a custom NIB "ShoppingItem".
+ */
+class ShoppingItemView: UITableViewCell {
 
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var itemName: UILabel!
