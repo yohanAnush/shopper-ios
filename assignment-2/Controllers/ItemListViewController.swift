@@ -18,11 +18,12 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     var selectedItem: Item?
     
     let items = [
-        Item(id: 0, name: "Apple iPhone 6s", price: "300", thumbnailUrl: "", description: ""),
-        Item(id: 1, name: "Apple iPhone 7s", price: "400", thumbnailUrl: "", description: ""),
+        Item(id: 0, name: "Apple iPhone 6s", price: "300", thumbnailUrl: "", description: "", miniDescription: ""),
+        Item(id: 1, name: "Apple iPhone 7s", price: "400", thumbnailUrl: "", description: "", miniDescription: ""),
         Item(id: 2, name: "Apple iPhone 8", price: "599",
              thumbnailUrl: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-8-new.jpg",
-             description: "Internet Browser, Near Field Communication, Touchscreen, 3G Data Capable, 4G Data Capable, 4K Video Recording, Accelerometer, Bluetooth Enabled, Fingerprint Sensor, Global Ready, GPS, Music Player, Speakerphone, Water-Resistant, Wi-Fi Capable"),
+             description: "Internet Browser, Near Field Communication, Touchscreen, 3G Data Capable, 4G Data Capable, 4K Video Recording, Accelerometer, Bluetooth Enabled, Fingerprint Sensor, Global Ready, GPS, Music Player, Speakerphone, Water-Resistant, Wi-Fi Capable",
+             miniDescription: "Geniune Apple product, mint condition")
     ]
     
     // Potential row count based on our data set.
@@ -37,6 +38,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.itemName?.text = item.name
         cell.itemPrice?.text = item.price
+        cell.itemMiniDescription?.text = item.miniDescription
         cell.thumbnail.download(from: item.thumbnailUrl)
 
         return cell
