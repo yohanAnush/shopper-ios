@@ -349,14 +349,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zF-ax-GTD">
-                                <rect key="frame" x="20" y="348" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <rect key="frame" x="20" y="358" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDg-Rj-eMc">
-                                <rect key="frame" x="20" y="388.5" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <rect key="frame" x="20" y="399.5" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -386,7 +386,7 @@
                             <constraint firstItem="0zF-ax-GTD" firstAttribute="leading" secondItem="6NS-Re-3f0" secondAttribute="leading" constant="20" id="Pkt-15-8Tw"/>
                             <constraint firstItem="6j9-wq-1K7" firstAttribute="bottom" secondItem="6NS-Re-3f0" secondAttribute="bottom" constant="-30" id="eVZ-lN-HBC"/>
                             <constraint firstItem="8EC-AN-YPN" firstAttribute="top" secondItem="6NS-Re-3f0" secondAttribute="top" id="ejA-mL-bBF"/>
-                            <constraint firstItem="0zF-ax-GTD" firstAttribute="top" secondItem="8EC-AN-YPN" secondAttribute="bottom" constant="10" id="iKw-eu-YgP"/>
+                            <constraint firstItem="0zF-ax-GTD" firstAttribute="top" secondItem="8EC-AN-YPN" secondAttribute="bottom" constant="20" id="iKw-eu-YgP"/>
                             <constraint firstItem="8EC-AN-YPN" firstAttribute="trailing" secondItem="6NS-Re-3f0" secondAttribute="trailing" id="oCJ-px-5tx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6NS-Re-3f0"/>
@@ -445,7 +445,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D0S-Dl-Z4r"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wSM-2c-Xy2"/>
+                    <navigationItem key="navigationItem" title="Shop" id="wSM-2c-Xy2"/>
                     <connections>
                         <outlet property="tableView" destination="W6N-jV-NXo" id="RoY-kO-t5H"/>
                         <segue destination="HMD-AI-CUU" kind="show" identifier="listToIndividualSegue" id="0Na-oS-eLM"/>
