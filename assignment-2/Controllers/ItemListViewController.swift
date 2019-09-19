@@ -37,6 +37,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.itemName?.text = item.name
         cell.itemPrice?.text = item.price
+        cell.thumbnail.download(from: item.thumbnailUrl)
 
         return cell
     }
@@ -46,9 +47,13 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         self.selectedItem = items[indexPath.row]
         
         // Move to individual item screen.
+        // Item object of the selected item is sent to next screen via the segue.
+        // See "prepare" function.
         self.performSegue(withIdentifier: "listToIndividualSegue", sender: self)
     }
     
+    
+    // Send the item object from this screen to next screen via the segue.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "listToIndividualSegue") {
             let svc = segue.destination as! IndividualItemViewController
