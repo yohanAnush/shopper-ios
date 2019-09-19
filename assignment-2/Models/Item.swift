@@ -15,4 +15,5 @@ struct Item {
     var price: String
     var thumbnailUrl: String
     var description: String
+    var miniDescription: String
 }
