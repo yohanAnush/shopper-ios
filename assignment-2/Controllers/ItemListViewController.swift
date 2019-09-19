@@ -12,11 +12,14 @@ import UIKit
  * Responsible for populating shopping items table with data.
  * A custom NIB is used to represent a table cell.
  */
-class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var selectedItem: Item?
     
+    var filteredItems: Array<Item> = []
     let items = [
         Item(id: 0, name: "Apple iPhone 6s", price: "300", thumbnailUrl: "", description: "", miniDescription: ""),
         Item(id: 1, name: "Apple iPhone 7s", price: "400", thumbnailUrl: "", description: "", miniDescription: ""),
@@ -28,13 +31,14 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     // Potential row count based on our data set.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return filteredItems.count
     }
     
     // Populate the table.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingItem", for: indexPath) as! ShoppingItemView
-        let item = items[indexPath.row]
+        print("Row: \(indexPath.row)")
+        let item = filteredItems[indexPath.row]
         
         cell.itemName?.text = item.name
         cell.itemPrice?.text = item.price
@@ -63,6 +67,17 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    // Search.
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredItems = searchText.isEmpty ?
+            items :
+            items.filter { $0.name.range(of: searchText, options: .caseInsensitive) != nil }
+        
+        print("\(filteredItems.count)")
+        
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,6 +86,12 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.register(UINib(nibName: "ShoppingItem", bundle: nil), forCellReuseIdentifier: "ShoppingItem")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Search within the table by default.
+        // Show everything when no input is made.
+        searchBar.delegate = self
+        filteredItems = items
+        
     }
     
     
