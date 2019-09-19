@@ -11,7 +11,6 @@ import UIKit
 class IndividualItemViewController: UIViewController {
     var item: Item? = nil
     
-    @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemDescription: UILabel!
@@ -20,14 +19,10 @@ class IndividualItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set up navbar and back button.
-        navbar.backgroundColor = UIColor.white
-        navbar.tintColor = UIColor.blue
-        navbar.backItem?.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
-        
         // Update the page with item details.
         if let item = item {
-            navbar.topItem?.title = item.name
+            self.navigationItem.title = item.name
+            
             itemName.text? = item.name
             itemDescription.text? = item.description
             image.download(from: item.thumbnailUrl)
