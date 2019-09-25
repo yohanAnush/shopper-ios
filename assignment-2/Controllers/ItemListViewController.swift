@@ -73,7 +73,8 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
             items :
             items.filter { $0.name.range(of: searchText, options: .caseInsensitive) != nil }
         
-        print("\(filteredItems.count)")
+        // If the search item is know present in already loaded item list,
+        // get it from the backend.	
         
         tableView.reloadData()
     }
