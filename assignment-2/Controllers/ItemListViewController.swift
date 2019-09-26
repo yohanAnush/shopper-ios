@@ -18,9 +18,10 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedItem: Item?
+    let api: API = API()
     
     var filteredItems: Array<Item> = []
-    let items = [
+    var items = [
         Item(id: 0, name: "Apple iPhone 6s", price: "300", thumbnailUrl: "", description: "", miniDescription: ""),
         Item(id: 1, name: "Apple iPhone 7s", price: "400", thumbnailUrl: "", description: "", miniDescription: ""),
         Item(id: 2, name: "Apple iPhone 8", price: "599",
@@ -37,7 +38,6 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     // Populate the table.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingItem", for: indexPath) as! ShoppingItemView
-        print("Row: \(indexPath.row)")
         let item = filteredItems[indexPath.row]
         
         cell.itemName?.text = item.name
@@ -88,6 +88,8 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         
+        retrieveItems()
+        
         // Search within the table by default.
         // Show everything when no input is made.
         searchBar.delegate = self
@@ -95,6 +97,35 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    
-    
+    func retrieveItems() {
+        let requestUrl = URL(string: "\(api.APIEndPointItemsURL)/)")!
+        
+        // Get user's details.
+        let task = URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+            else if let data = data {
+                let itemsArray = object(fromData: data) as! NSArray
+                var temp: Array<Item> = []
+                
+                for item_ in itemsArray {
+                    let item = item_ as! NSDictionary
+                    temp.append(
+                        Item(
+                            id: item.object(forKey: "id") as! Int,
+                            name: item.object(forKey: "name") as! String,
+                            price: item.object(forKey: "price") as! String,
+                            thumbnailUrl: item.object(forKey: "imageAsUrl") as! String,
+                            description: item.object(forKey: "description") as! String,
+                            miniDescription: ""
+                        )
+                    )
+                }
+                
+                self.items = temp
+                print(self.items)
+            }
+    }
+}
 }

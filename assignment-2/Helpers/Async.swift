@@ -33,3 +33,31 @@ extension UIImageView {
         download(from: urlObject)
     }
 }
+
+
+struct API {
+    let APIEndPointBaseURL: String = "https://5d8cbac1443e3400143b4a78.mockapi.io"
+    let APIEndPointUsersURL: String = "https://5d8cbac1443e3400143b4a78.mockapi.io/users"
+    let APIEndPointItemsURL: String = "https://5d8cbac1443e3400143b4a78.mockapi.io/items"
+
+}
+
+
+func object(fromString: String) -> Any {
+    let data = Data(fromString.utf8)
+    
+    do {
+        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? AnyObject  {
+            return json
+        }
+    }
+    catch {
+        return ""
+    }
+}
+
+// Overriding.
+func object(fromData: Data) -> Any {
+    let string = String(data: fromData, encoding: .utf8)
+    return object(fromString: string!)
+}
