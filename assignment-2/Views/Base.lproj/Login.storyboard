@@ -519,13 +519,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XpO-bh-09T">
                                         <rect key="frame" x="32" y="348" width="350" height="110"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Upload" translatesAutoresizingMaskIntoConstraints="NO" id="fWQ-9c-TMf">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fWQ-9c-TMf">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Upload" translatesAutoresizingMaskIntoConstraints="NO" id="9hy-6W-5Kt">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9hy-6W-5Kt">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="110"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Upload" translatesAutoresizingMaskIntoConstraints="NO" id="4Nv-Wt-T5l">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4Nv-Wt-T5l">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="110"/>
                                             </imageView>
                                         </subviews>
@@ -580,12 +580,38 @@
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zr-ve-e2J">
-                                        <rect key="frame" x="32" y="328.5" width="65" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zr-ve-e2J">
+                                        <rect key="frame" x="32" y="328.5" width="41" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tgH-5d-VJf">
+                                        <rect key="frame" x="32" y="468" width="351" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmx-Lt-IFa">
+                                                <rect key="frame" x="0.0" y="0.0" width="110.5" height="30"/>
+                                                <state key="normal" title="Upload Image"/>
+                                                <connections>
+                                                    <action selector="browseImageOne:" destination="9uN-2w-u8E" eventType="touchUpInside" id="zlr-gP-yDW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ9-LE-70V">
+                                                <rect key="frame" x="120.5" y="0.0" width="110" height="30"/>
+                                                <state key="normal" title="Upload Image"/>
+                                                <connections>
+                                                    <action selector="browseImageTwo:" destination="9uN-2w-u8E" eventType="touchUpInside" id="SaJ-5E-GJi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fda-qH-snT">
+                                                <rect key="frame" x="240.5" y="0.0" width="110.5" height="30"/>
+                                                <state key="normal" title="Upload Image"/>
+                                                <connections>
+                                                    <action selector="browseImageThree:" destination="9uN-2w-u8E" eventType="touchUpInside" id="B6A-W6-4Hp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="t9f-b4-weA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="20" symbolic="YES" id="0BW-YB-9PU"/>
@@ -594,6 +620,7 @@
                                     <constraint firstItem="1Zr-ve-e2J" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="3gb-oN-EtG"/>
                                     <constraint firstAttribute="trailing" secondItem="teZ-PI-5cK" secondAttribute="trailing" constant="32" id="4Jw-CH-Xfb"/>
                                     <constraint firstItem="qdE-XN-OlC" firstAttribute="top" secondItem="8hX-hK-tw1" secondAttribute="bottom" constant="40" id="4Oz-gQ-d1m"/>
+                                    <constraint firstItem="tgH-5d-VJf" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="660-kx-J4J"/>
                                     <constraint firstItem="CVH-KI-vvv" firstAttribute="top" secondItem="yQW-FD-1kt" secondAttribute="bottom" constant="5" id="7QG-no-mww"/>
                                     <constraint firstAttribute="trailing" secondItem="XpO-bh-09T" secondAttribute="trailing" constant="32" id="7Ur-aQ-aDk"/>
                                     <constraint firstItem="XpO-bh-09T" firstAttribute="top" secondItem="1Zr-ve-e2J" secondAttribute="bottom" constant="5" id="8RN-th-gNf"/>
@@ -614,9 +641,7 @@
                                     <constraint firstItem="sDZ-9V-eoN" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="Gqo-sn-gTP"/>
                                     <constraint firstItem="o6x-la-W5x" firstAttribute="top" secondItem="qBN-nw-tye" secondAttribute="bottom" constant="20" id="HnC-uJ-K9t"/>
                                     <constraint firstItem="4T6-gO-jQ7" firstAttribute="top" secondItem="t9f-b4-weA" secondAttribute="bottom" constant="40" id="IL5-It-Vir"/>
-                                    <constraint firstItem="yQW-FD-1kt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="KHc-fR-0zo">
-                                        <variation key="heightClass=regular-widthClass=compact" symbolic="YES"/>
-                                    </constraint>
+                                    <constraint firstItem="yQW-FD-1kt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="KHc-fR-0zo"/>
                                     <constraint firstItem="tTP-YA-Ptu" firstAttribute="top" secondItem="4T6-gO-jQ7" secondAttribute="bottom" constant="40" id="Kn4-wc-bOR"/>
                                     <constraint firstItem="0gr-G0-cTy" firstAttribute="top" secondItem="RfJ-mT-Ua1" secondAttribute="bottom" constant="20" id="L2H-hX-fcf"/>
                                     <constraint firstItem="4T6-gO-jQ7" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="LqE-AQ-25v"/>
@@ -638,6 +663,7 @@
                                     <constraint firstAttribute="trailing" secondItem="0gr-G0-cTy" secondAttribute="trailing" constant="32" id="YOd-gH-gI8"/>
                                     <constraint firstItem="XpO-bh-09T" firstAttribute="top" secondItem="4T6-gO-jQ7" secondAttribute="bottom" constant="40" id="Ypl-fg-EIB"/>
                                     <constraint firstItem="iHl-8R-jiu" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="10" id="Zcv-XV-V3U"/>
+                                    <constraint firstAttribute="trailing" secondItem="tgH-5d-VJf" secondAttribute="trailing" constant="31" id="bcc-EH-Gb5"/>
                                     <constraint firstAttribute="trailing" secondItem="tTP-YA-Ptu" secondAttribute="trailing" constant="32" id="chb-mC-Trw"/>
                                     <constraint firstItem="Agv-N6-QpL" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="dy7-px-wo8">
                                         <variation key="heightClass=regular-widthClass=compact" constant="32"/>
@@ -660,6 +686,7 @@
                                     <constraint firstItem="qdE-XN-OlC" firstAttribute="top" secondItem="4T6-gO-jQ7" secondAttribute="top" id="oz7-H7-eBZ"/>
                                     <constraint firstItem="8hX-hK-tw1" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="pQS-P4-G8l"/>
                                     <constraint firstItem="XpO-bh-09T" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="qf2-w4-17l"/>
+                                    <constraint firstItem="tgH-5d-VJf" firstAttribute="top" secondItem="XpO-bh-09T" secondAttribute="bottom" constant="10" id="r6N-eg-Hgw"/>
                                     <constraint firstItem="x31-3m-Fnk" firstAttribute="leading" secondItem="1Yp-f4-YxX" secondAttribute="leading" constant="32" id="sYa-OP-aME"/>
                                     <constraint firstAttribute="bottom" secondItem="4T6-gO-jQ7" secondAttribute="bottom" constant="426" id="tz6-01-7Og"/>
                                     <constraint firstItem="teZ-PI-5cK" firstAttribute="top" secondItem="4T6-gO-jQ7" secondAttribute="bottom" constant="40" id="uUn-94-XeU"/>
@@ -884,6 +911,14 @@
                         <viewLayoutGuide key="safeArea" id="QNN-fD-PWW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Item" image="Add" id="rIv-f4-OEr"/>
+                    <connections>
+                        <outlet property="caption" destination="t9f-b4-weA" id="On8-bm-HKL"/>
+                        <outlet property="disc" destination="4T6-gO-jQ7" id="K2P-8i-zpI"/>
+                        <outlet property="imageOne" destination="fWQ-9c-TMf" id="pTM-Rt-SIF"/>
+                        <outlet property="imageThree" destination="4Nv-Wt-T5l" id="zBD-QP-y1s"/>
+                        <outlet property="imageTwo" destination="9hy-6W-5Kt" id="Yzk-vc-pQl"/>
+                        <outlet property="name" destination="CVH-KI-vvv" id="sQP-ol-dma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mkr-Em-1t2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1266,8 +1301,8 @@
         <image name="Flash" width="25" height="25"/>
         <image name="Heart" width="25" height="25"/>
         <image name="History" width="25" height="25"/>
+        <image name="Image Placeholder" width="200" height="200"/>
         <image name="Orders" width="25" height="25"/>
-        <image name="Upload" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nCW-09-00D"/>
