@@ -209,6 +209,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="doRegister:" destination="YLp-sl-4nk" eventType="touchUpInside" id="Ga9-rB-Oed"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-Jq-jVw">
                                 <rect key="frame" x="94" y="392" width="226" height="30"/>
@@ -216,7 +219,7 @@
                                     <color key="titleColor" red="0.38167606259999998" green="0.38290773" blue="0.50925999369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="mD8-zL-61w"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backToLoginPage" id="mD8-zL-61w"/>
                                 </connections>
                             </button>
                         </subviews>

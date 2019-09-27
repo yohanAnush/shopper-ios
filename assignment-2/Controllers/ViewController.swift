@@ -26,7 +26,8 @@ class ViewController: UIViewController {
     @IBAction func doLogin(_ sender: Any) {
         let email = emailOnLogin.text!
         let password = passwordOnLogin.text!
-        let requestUrl = URL(string: "\(api.APIEndPointUsersURL)/\(email)")!
+        
+        let requestUrl = URL(string: "https://5d8cbac1443e3400143b4a78.mockapi.io/users/\(email)")!
         var passwordCorrect = false
         var complete = false
         
@@ -68,6 +69,52 @@ class ViewController: UIViewController {
         // performSegue(withIdentifier: "userLoginSuccessSegue", sender: self)
         // performSegue(withIdentifier: "sellerLoginSuccessSegue", sender: self)
     }
+    
+    @IBAction func doRegister(_ sender: Any) {
+        let email = emailOnReg.text!
+        let password = passwordOnReg.text!
+        
+        let body: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+        
+        let jsonBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+        let requestUrl = URL(string: "https://5d8cbac1443e3400143b4a78.mockapi.io/users/")!
+        var request = URLRequest(url: requestUrl)
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = jsonBody
+        
+        var complete = false
+        var success = false
+        
+        // Get user's details.
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+            else if let data = data {
+                if let httpResponse = response as? HTTPURLResponse {
+                    let statusCode = httpResponse.statusCode
+                    success = (statusCode == 200 || statusCode == 201)
+                }
+                complete = true
+            }
+        }
+        task.resume()
+        
+        while(!complete) {
+            // Show loading screen.
+            
+        }
+        
+        if (success) {
+            self.performSegue(withIdentifier: "backToLoginPage", sender: self)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

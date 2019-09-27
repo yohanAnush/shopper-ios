@@ -30,14 +30,14 @@ class AddItemViewController: UIViewController {
         let aPrice = price.text!
         let aDescription = disc.text!
         
-        let body: [String: Any] = [
+        let body: [String: String] = [
             "id": "1",
             "name": aName,
             "description": aDescription,
             "price": aPrice
         ]
         let jsonBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        let requestUrl = URL(string: "http://localhost:3000/items/)")!
+        let requestUrl = URL(string: "https://5d8cbac1443e3400143b4a78.mockapi.io/items/")!
         var request = URLRequest(url: requestUrl)
         
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

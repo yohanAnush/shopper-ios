@@ -102,11 +102,12 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
                 let string = String(data: data, encoding: .utf8)
                 let objects = try? JSONSerialization.jsonObject(with: data, options: []) as? [Dictionary<String, String>]
                 for object in objects! {
+                    print(object)
                     let item = Item(
                         id: 1,
                         name: object["name"]!,
                         price: object["price"]!,
-                        thumbnailUrl: "",
+                        thumbnailUrl: object["thumbnailUrl"]!,
                         description: object["description"]!,
                         miniDescription: "")
                     self.items.append(item)
