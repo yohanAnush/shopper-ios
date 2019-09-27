@@ -49,7 +49,8 @@ class ViewController: UIViewController {
         task.resume()
         
         while(!complete) {
-            
+            // Show loading screen.
+           
         }
         
         if (passwordCorrect) {

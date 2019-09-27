@@ -423,7 +423,7 @@
                                             </mask>
                                         </variation>
                                     </textView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iPhone 6s" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-KI-vvv">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" placeholder="iPhone 6s" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-KI-vvv">
                                         <rect key="frame" x="32" y="40" width="350" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="zKo-uq-AIQ"/>
@@ -442,7 +442,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Well used, No scratches, w/ Apple Care" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t9f-b4-weA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4444" borderStyle="roundedRect" placeholder="300" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t9f-b4-weA">
                                         <rect key="frame" x="32" y="110" width="350" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="Kx6-aq-u0J"/>
@@ -450,7 +450,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Kx6-aq-u0J"/>
@@ -470,7 +470,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agv-N6-QpL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agv-N6-QpL">
                                         <rect key="frame" x="32" y="90.5" width="73" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -920,12 +920,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Item" image="Add" id="rIv-f4-OEr"/>
                     <connections>
-                        <outlet property="caption" destination="t9f-b4-weA" id="On8-bm-HKL"/>
                         <outlet property="disc" destination="4T6-gO-jQ7" id="K2P-8i-zpI"/>
                         <outlet property="imageOne" destination="fWQ-9c-TMf" id="pTM-Rt-SIF"/>
                         <outlet property="imageThree" destination="4Nv-Wt-T5l" id="zBD-QP-y1s"/>
                         <outlet property="imageTwo" destination="9hy-6W-5Kt" id="Yzk-vc-pQl"/>
                         <outlet property="name" destination="CVH-KI-vvv" id="sQP-ol-dma"/>
+                        <outlet property="price" destination="t9f-b4-weA" id="On8-bm-HKL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mkr-Em-1t2" userLabel="First Responder" sceneMemberID="firstResponder"/>

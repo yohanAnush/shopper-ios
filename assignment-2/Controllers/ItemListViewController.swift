@@ -21,14 +21,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     let api: API = API()
     
     var filteredItems: Array<Item> = []
-    var items = [
-        Item(id: 0, name: "Apple iPhone 6s", price: "300", thumbnailUrl: "", description: "", miniDescription: ""),
-        Item(id: 1, name: "Apple iPhone 7s", price: "400", thumbnailUrl: "", description: "", miniDescription: ""),
-        Item(id: 2, name: "Apple iPhone 8", price: "599",
-             thumbnailUrl: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-8-new.jpg",
-             description: "Internet Browser, Near Field Communication, Touchscreen, 3G Data Capable, 4G Data Capable, 4K Video Recording, Accelerometer, Bluetooth Enabled, Fingerprint Sensor, Global Ready, GPS, Music Player, Speakerphone, Water-Resistant, Wi-Fi Capable",
-             miniDescription: "Geniune Apple product, mint condition")
-    ]
+    var items: Array<Item> = []
     
     // Potential row count based on our data set.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,39 +86,35 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         // Search within the table by default.
         // Show everything when no input is made.
         searchBar.delegate = self
-        filteredItems = items
+        print(filteredItems)
         
     }
     
     func retrieveItems() {
-        let requestUrl = URL(string: "\(api.APIEndPointItemsURL)/)")!
+        let requestUrl = URL(string: "https://5d8cbac1443e3400143b4a78.mockapi.io/items/")!
         
         // Get user's details.
         let task = URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
             if let error = error {
-                print(error)
+                print("***\(error)")
             }
             else if let data = data {
-                let itemsArray = object(fromData: data) as! NSArray
-                var temp: Array<Item> = []
-                
-                for item_ in itemsArray {
-                    let item = item_ as! NSDictionary
-                    temp.append(
-                        Item(
-                            id: item.object(forKey: "id") as! Int,
-                            name: item.object(forKey: "name") as! String,
-                            price: item.object(forKey: "price") as! String,
-                            thumbnailUrl: item.object(forKey: "imageAsUrl") as! String,
-                            description: item.object(forKey: "description") as! String,
-                            miniDescription: ""
-                        )
-                    )
+                let string = String(data: data, encoding: .utf8)
+                let objects = try? JSONSerialization.jsonObject(with: data, options: []) as? [Dictionary<String, String>]
+                for object in objects! {
+                    let item = Item(
+                        id: 1,
+                        name: object["name"]!,
+                        price: object["price"]!,
+                        thumbnailUrl: "",
+                        description: object["description"]!,
+                        miniDescription: "")
+                    self.items.append(item)
                 }
-                
-                self.items = temp
-                print(self.items)
+                self.filteredItems = self.items
+                self.tableView.reloadData()
             }
+        }
+        task.resume()
     }
-}
 }
